@@ -1,4 +1,4 @@
-﻿
+
 <#
 .SYNOPSIS
 Outputs statistics form IIS log files relating to Microsoft Connected Cache
@@ -63,7 +63,7 @@ function Parse-IISLog {
                               | Where-Object {$_ -match "\#Fields\: "}
                           ) -replace "\#Fields\: "  -split " "
 
-            Get-Content $LatestLog.FullName `
+            Get-Content $P `
                 | Where-Object {$_[0] -ne "#"} `
                 | ForEach-Object {
    
